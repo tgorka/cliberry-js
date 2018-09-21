@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.1] - 2018-09-21
 ### Added
+- add basic package.json
+- add yarn add as add schematic
+- add yarn add --dev as addDev schematic
+- add yarn install as install schematic
+- add init as combine a new project
 - generate project with:
   * schematics
   * debug framework

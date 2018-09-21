@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "cliberry-schematics#add-dev",
+  "title": "cliberry-schematics add-dev Options Schema",
+  "type": "object",
+  "properties": {
+    "package": {
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": "0"
+      },
+      "alias": "p",
+      "description": "dev package to add on package.json"
+    },
+    "version": {
+      "type": "string",
+      "$default": {
+        "$source": "argv",
+        "index": "1"
+      },
+      "alias": "v",
+      "description": "version of the package to add on package.json"
+    }
+  },
+  "required": [
+    "package"
+  ]
+}

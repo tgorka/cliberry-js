@@ -1,28 +1,29 @@
 import 'source-map-support/register';
-import {strings} from '@angular-devkit/core';
 import {
   Rule,
-  apply,
-  mergeWith,
-  template,
-  url,
+  chain,
+  Tree,
+  SchematicContext
 } from '@angular-devkit/schematics';
-import {dasherize, classify} from '@angular-devkit/core/src/utils/strings';
 import {Schema as Options} from './schema';
+import {base} from "../base/index";
+import {install} from "../install/index";
 
-
-const stringUtils = {dasherize, classify};
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
 export function init(options: Options): Rule {
-  return mergeWith(apply(url('./files'), [
-    template({
-      utils: strings,
-      ...stringUtils,
-      ...options,
-      'dot': '.',
-      //latestVersions,
-    }),
-  ]));
+  return (tree: Tree, context: SchematicContext) => {
+    return chain([
+      base({
+        name: options.name,
+        description: options.description,
+        author: options.author,
+        email: options.email,
+        repositoryUrl: options.repositoryUrl,
+        license: options.license
+      }),
+      install(),
+    ])(tree, context);
+  }
 }

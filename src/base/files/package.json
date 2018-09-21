@@ -1,0 +1,41 @@
+{
+  "name": "<%= name %>",
+  "version": "0.0.1",
+  "description": "<%= description %>",
+  "main": "./src/index",
+  "scripts": {
+    "build": "yarn --dev && tsc -p tsconfig.json",
+    "test": "yarn build && jasmine src/**/*.spec.js",
+    "tsc": "tsc",
+    "yarn": "yarn"
+  },
+  "homepage": "https://<%= author %>",
+  "repository": {
+    "type": "git",
+    "url": "<%= repositoryUrl %>"
+  },
+  "engines": {
+    "node": ">=8.9"
+  },
+  "author": {
+    "name": "<%= author %>",
+    "email": "<%= email %>"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "es8"
+  ],
+  "private": <%= isPrivate %>,
+  "license": "<%= license %>",
+  "dependencies": {
+    "source-map-support": "^0.5.9"
+  },
+  "devDependencies": {
+    "@types/node": "^10.9.4",
+    "@types/source-map-support": "^0.4.1",
+    "jasmine": "^3.2.0",
+    "typescript": "^3.0.3",
+    "yarn": "^1.9.4"
+  }
+}

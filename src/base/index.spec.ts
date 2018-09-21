@@ -21,6 +21,8 @@ describe(schematicName, () => {
     name: 'test',
     repositoryUrl: 'test',
     license: 'test',
+    author: 'test',
+    email: 'test',
   };
 
   it('should create all files of a project', () => {

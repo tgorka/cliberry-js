@@ -5,23 +5,38 @@
   "type": "object",
   "properties": {
     "name": {
-      "alias": "n",
-      "description": "The name of the project.",
       "type": "string",
-      "format": "html-selector",
       "$default": {
         "$source": "argv",
-        "index": 0
-      }
+        "index": "0"
+      },
+      "alias": "n",
+      "description": "name of the project"
     },
     "description": {
-      "alias": "d",
-      "description": "Short description of the project.",
       "type": "string",
-      "$default": {
-        "$source": "argv",
-        "index": 1
-      }
+      "alias": "d",
+      "description": "description of the project"
+    },
+    "author": {
+      "type": "string",
+      "alias": "a",
+      "description": "author of the project (name or company)"
+    },
+    "email": {
+      "type": "string",
+      "alias": "e",
+      "description": "contact email of the author"
+    },
+    "repositoryUrl": {
+      "type": "string",
+      "alias": "r",
+      "description": "url of the repository"
+    },
+    "license": {
+      "type": "string",
+      "alias": "l",
+      "description": "type of the license"
     }
   },
   "required": [

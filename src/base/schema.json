@@ -13,28 +13,33 @@
       "alias": "n",
       "description": "name of the project"
     },
+    "description": {
+      "type": "string",
+      "alias": "d",
+      "description": "description of the project"
+    },
+    "author": {
+      "type": "string",
+      "alias": "a",
+      "description": "author of the project (name or company)"
+    },
+    "email": {
+      "type": "string",
+      "alias": "e",
+      "description": "contact email of the author"
+    },
     "repositoryUrl": {
       "type": "string",
-      "$default": {
-        "$source": "argv",
-        "index": "1"
-      },
       "alias": "r",
       "description": "url of the repository"
     },
     "license": {
       "type": "string",
-      "$default": {
-        "$source": "argv",
-        "index": "2"
-      },
       "alias": "l",
       "description": "type of the license"
     }
   },
   "required": [
-    "name",
-    "repositoryUrl",
-    "license"
+    "name"
   ]
 }

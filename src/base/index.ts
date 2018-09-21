@@ -6,38 +6,42 @@
  * found in the LICENSE file at https://github.com/tgorka/cliberry-schematics/LICENSE
  */
 import 'source-map-support/register';
-import {NodePackageInstallTask} from '@angular-devkit/schematics/tasks';
 import {
   Rule,
+  apply,
+  mergeWith,
+  template,
+  url,
   Tree,
-  SchematicContext
-  //apply,
-  //mergeWith,
-  //template,
-  //url,
-  //chain,
 } from '@angular-devkit/schematics';
-//import {dasherize, classify, camelize} from '@angular-devkit/core/src/utils/strings';
+import {dasherize, classify, camelize} from '@angular-devkit/core/src/utils/strings';
 import {Schema as Options} from './schema';
+import * as path from 'path';
 
 
-//const stringUtils = {dasherize, classify, camelize};
+const stringUtils = {dasherize, classify, camelize};
+
+export const getPackageJson = (tree: Tree): any | null => {
+  const packageData = tree.get('/package.json');
+  if (!packageData) return null;
+  return JSON.parse(packageData.toString());
+};
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-export function base(_options: Options): Rule {
-  return (tree: Tree, context: SchematicContext): Rule | Tree => {
-    context.addTask(new NodePackageInstallTask());
-    return tree;
-    // return chain[example({name: options.name})]
-  };
-  /*return mergeWith(apply(url('./files'), [
+export function base(options: Options): Rule {
+  options.repositoryUrl = options.repositoryUrl || '';
+  options.description = options.description || '';
+  options.license = options.license || 'private';
+  options.author = options.author || '';
+  options.email = options.email || '';
+  return mergeWith(apply(url('file://'+path.join(__dirname, `./files`)), [
     template({
-      utils: strings,
       ...stringUtils,
       ...options,
       'dot': '.',
+      'isPrivate': (options.license === 'private') ? 'true' : 'false',
       //latestVersions,
     }),
-  ]));*/
+  ]));
 }

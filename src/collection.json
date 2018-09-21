@@ -17,6 +17,30 @@
       "aliases": [
         "b"
       ]
+    },
+    "install": {
+      "factory": "./install/index#install",
+      "schema": "./install/schema.json",
+      "description": "Install all dependencies and call another installations",
+      "aliases": [
+        "i"
+      ]
+    },
+    "add": {
+      "factory": "./add/index#add",
+      "schema": "./add/schema.json",
+      "description": "Add selecet package into the repo using yarn.",
+      "aliases": [
+        "a"
+      ]
+    },
+    "addDev": {
+      "factory": "./addDev/index#addDev",
+      "schema": "./addDev/schema.json",
+      "description": "Add selecet dev package into the repo using yarn.",
+      "aliases": [
+        "ad"
+      ]
     }
   }
 }

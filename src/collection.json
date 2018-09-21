@@ -9,6 +9,14 @@
       "description": "Init schematics collection for cliberry-js.",
       "factory": "./init/index#init",
       "schema": "./init/schema.json"
+    },
+    "base": {
+      "factory": "./base/index#base",
+      "schema": "./base/schema.json",
+      "description": "Generate basic yarn init",
+      "aliases": [
+        "b"
+      ]
     }
   }
 }

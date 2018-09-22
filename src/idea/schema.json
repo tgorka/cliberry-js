@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "cliberry-schematics#idea",
+  "title": "cliberry-schematics idea Options Schema",
+  "type": "object",
+  "properties": {},
+  "required": []
+}

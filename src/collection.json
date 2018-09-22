@@ -13,10 +13,7 @@
     "base": {
       "factory": "./base/index#base",
       "schema": "./base/schema.json",
-      "description": "Generate basic yarn init",
-      "aliases": [
-        "b"
-      ]
+      "description": "Generate basic yarn init"
     },
     "install": {
       "factory": "./install/index#install",
@@ -40,6 +37,30 @@
       "description": "Add selecet dev package into the repo using yarn.",
       "aliases": [
         "ad"
+      ]
+    },
+    "bin": {
+      "factory": "./bin/index#bin",
+      "schema": "./bin/schema.json",
+      "description": "generate binary execution in the prject",
+      "aliases": [
+        "b"
+      ]
+    },
+    "idea": {
+      "factory": "./idea/index#idea",
+      "schema": "./idea/schema.json",
+      "description": "generate .idea configuration for js project",
+      "aliases": [
+        "ic"
+      ]
+    },
+    "editor": {
+      "factory": "./editor/index#editor",
+      "schema": "./editor/schema.json",
+      "description": "generate .editorconfig configuration",
+      "aliases": [
+        "ec"
       ]
     }
   }
